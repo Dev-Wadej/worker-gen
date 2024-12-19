@@ -26,6 +26,7 @@ import {
   TableHeader,
   TableRow
 } from "@/components/ui/table";
+import { Input } from "@/components/ui/input";
 
 const data: SalesLead[] = [
   {
@@ -296,7 +297,8 @@ export function DataTable() {
 
   return (
     <div className="w-full">
-      <div className="rounded-md ">
+      <Input placeholder="Sort " />
+      <div className="rounded-md">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (

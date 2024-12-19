@@ -15,7 +15,7 @@ export default function Page() {
           <SidebarInset>
             <DashboardNav />
             <DashboardHero />
-            <div className="mt-6 m-4 shadow-2xl p-3 rounded-md border border-gray-200">
+            <div className="mt-6 m-4 shadow-2xl p-3 rounded-md border border-gray-200 ">
               <DataTable />
             </div>
           </SidebarInset>

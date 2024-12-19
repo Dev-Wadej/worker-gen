@@ -1,3 +1,9 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+
 export default function Page() {
-  return null;
+  const router = useRouter();
+
+  return router.push("dashboard");
 }

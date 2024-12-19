@@ -144,8 +144,8 @@ const sidebarItems = [
 export function AppSidebar() {
   const { toggleSidebar } = useSidebar();
   return (
-    <Sidebar>
-      <SidebarHeader className="mt-16">
+    <Sidebar collapsible="icon">
+      <SidebarHeader className="md:mt-16">
         <button
           onClick={toggleSidebar}
           aria-label="toggle sidebar"
@@ -159,13 +159,13 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild>
+              <SidebarMenuButton asChild tooltip={"Home"}>
                 <a href={"#"}>
                   <Home />
                   <span>Home</span>
                 </a>
               </SidebarMenuButton>
-              <SidebarMenuButton asChild>
+              <SidebarMenuButton asChild tooltip={"Recent"}>
                 <span className="flex items-center justify-between">
                   <a href={"#"} className="flex items-center gap-2">
                     <Clock size={16} />
@@ -174,7 +174,7 @@ export function AppSidebar() {
                   <ChevronDown />
                 </span>
               </SidebarMenuButton>
-              <SidebarMenuButton asChild>
+              <SidebarMenuButton asChild tooltip={"Pinned"}>
                 <span className="flex items-center justify-between">
                   <a href={"#"} className="flex items-center gap-2">
                     <Pin size={16} />
@@ -196,7 +196,7 @@ export function AppSidebar() {
               <SidebarMenu>
                 {item.details.map((item) => (
                   <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild>
+                    <SidebarMenuButton asChild tooltip={item.title}>
                       <a href={item.url}>
                         <item.icon />
                         <span>{item.title}</span>

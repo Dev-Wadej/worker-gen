@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 import {
   ChartArea,
   ChevronDown,
@@ -43,7 +44,8 @@ const DashboardNav = () => {
   return (
     <header className="mt-20 m-4 shadow-md border border-gray-100 rounded p-1">
       <div className="flex justify-between">
-        <div>
+        <div className="flex items-center ">
+          <SidebarTrigger className="inline-block md:hidden text-gray-500" />
           <Button
             variant={"ghost"}
             className="p-1 px-2 font-semibold opacity-60"
@@ -52,7 +54,7 @@ const DashboardNav = () => {
           </Button>
         </div>
         <div className="flex items-center gap-3">
-          <ul className="flex items-center gap-4">
+          <ul className="hidden xl:flex flex-wrap items-center justify-end gap-4">
             {items.map((item) => (
               <li key={item.name}>
                 <Button variant={"ghost"} className="p-1 px-2 opacity-80">
@@ -61,7 +63,7 @@ const DashboardNav = () => {
               </li>
             ))}
           </ul>
-          <ul className="flex items-center gap-4">
+          <ul className="hidden md:flex flex-wrap items-center gap-4 justify-end">
             <Button
               variant={"outline"}
               className="p-1 px-2 font-semibold opacity-60"
